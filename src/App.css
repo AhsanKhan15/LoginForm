@@ -1,7 +1,40 @@
+@import "antd/dist/antd.css";
+
+.main {
+  width: 388px;
+  margin: 0 auto;
+  margin-top: 140px;
+}
+.logo {
+  margin-top: -137px;
+  height: 94px;
+  margin-left: 200px;
+}
+.header {
+  margin-top: 30px;
+  height: 64px;
+  line-height: 125px;
+}
 .App {
   text-align: center;
 }
+.form {
+  display: inline-block;
+  position: fixed;
+  top: 0;
+  bottom: 30%;
+  left: -13%;
+  right: 0;
+  width: 40%;
+  height: 100px;
+  margin: auto;
+}
 
+.message {
+  position: fixed;
+  top: 25%;
+  left: 16%;
+}
 .App-logo {
   height: 40vmin;
   pointer-events: none;
@@ -34,5 +67,14 @@
   }
   to {
     transform: rotate(360deg);
+  }
+}
+
+@media only screen and (max-width: 414px) {
+  .main {
+    width: 95%;
+  }
+  .logo {
+    margin-left: 134px;
   }
 }

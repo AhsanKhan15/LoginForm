@@ -1,23 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
-
+import "./App.css";
+import { useState, useEffect } from "react";
+import LoginForm from "./components/Login/LoginForm";
+import Message from "./components/Messages/Message";
 function App() {
+  const [loginResult, setLoginResult] = useState({});
+
+  const loginFormDetails = (props) => {
+    setLoginResult(props);
+  };
+  const { isVisible } = loginResult;
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      {isVisible ? (
+        <div className="message">
+          <Message loginResult={loginResult} />
+        </div>
+      ) : (
+        <div className="form">
+          <LoginForm loginFormDetails={loginFormDetails} />
+        </div>
+      )}
     </div>
   );
 }
